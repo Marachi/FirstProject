@@ -1,0 +1,18 @@
+package knight;
+
+import com.sun.javafx.sg.prism.NGShape;
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Model model = new Model();
+        View view = new View();
+
+        Controller controller = new Controller(model, view);
+        controller.processUser();
+
+
+    }
+}
