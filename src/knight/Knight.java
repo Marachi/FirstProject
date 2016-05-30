@@ -1,6 +1,6 @@
 package knight;
 
-import java.util.Map;
+import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -8,17 +8,7 @@ import java.util.Set;
  */
 public class Knight {
     private String name;
-    private Set ammo;
-
-    enum Slots{
-        HEAD,
-        SHOULDERS,
-        BODY,
-        HANDS,
-        ARMS,
-        FEETS,
-        LEGS
-    }
+    private Collection ammunition;
 
     public Knight(String name) {
         this.name = "sir " + name;
@@ -33,19 +23,19 @@ public class Knight {
         this.name = name;
     }
 
-    public Set getAmmo() {
-        return ammo;
+    public Collection getAmmunition() {
+        return ammunition;
     }
 
-    public void setAmmo(Set ammo) {
-        this.ammo = ammo;
+    public void setAmmunition(Collection ammunition) {
+        this.ammunition = ammunition;
     }
 
     @Override
     public String toString() {
         return "I'm a knight, " +
                 name + '\n' +
-                "My ammunition: " + ammo +
+                "My ammunition: " + ammunition +
                 '}';
     }
 }

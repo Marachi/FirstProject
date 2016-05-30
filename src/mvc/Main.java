@@ -1,8 +1,4 @@
-package knight;
-
-import com.sun.javafx.sg.prism.NGShape;
-
-import java.util.*;
+package mvc;
 
 public class Main {
 

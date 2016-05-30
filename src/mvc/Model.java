@@ -1,5 +1,6 @@
-package knight;
+package mvc;
 
+import knight.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,6 @@ import java.util.List;
 public class Model {
 
     private Knight knight;
-    private List<Ammo> armory = new ArrayList<>();
 
 
     public Knight getKnight() {
@@ -19,12 +19,5 @@ public class Model {
     public void setKnight(Knight knight) {
         this.knight = knight;
     }
-
-    public List<Ammo> getArmory() {
-        return armory;
-    }
-
-    public void setArmory(List<Ammo> armory) {
-        this.armory = armory;
-    }
 }
+

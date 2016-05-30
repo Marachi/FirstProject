@@ -1,4 +1,4 @@
-package knight;
+package mvc;
 
 import java.util.Collection;
 

@@ -3,13 +3,13 @@ package knight;
 /**
  * Created by potaychuk on 30.05.2016.
  */
-public class Ammo implements Comparable{
-    private ArmorType type;
+public class Ammunition implements Comparable{
+    private Type type;
     private double weight;
     private double price;
 
 
-    public Ammo(double weight, double price, ArmorType type) {
+    public Ammunition(double weight, double price, Type type) {
         this.weight = weight;
         this.price = price;
         this.type = type;
@@ -17,8 +17,8 @@ public class Ammo implements Comparable{
 
 
 
-    enum ArmorType{
-        HELM,SHOULDERS,CHEST,PANTS,GLOVES,BOOTS,BRACERS
+    public enum Type {
+        HELM,SHOULDERS,CHEST,PANTS,GLOVES,BOOTS,BRACERS, SWORD
     }
 
 
@@ -27,7 +27,7 @@ public class Ammo implements Comparable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Ammo ammo = (Ammo) o;
+        Ammunition ammo = (Ammunition) o;
 
         return type == ammo.type;
 
@@ -47,7 +47,7 @@ public class Ammo implements Comparable{
 
     @Override
     public String toString() {
-        return "Ammo{" +
+        return "Ammunition{" +
                 "type=" + type +
                 ", weight=" + weight +
                 ", price=" + price +
@@ -55,7 +55,7 @@ public class Ammo implements Comparable{
     }
     @Override
     public int compareTo(Object o) {
-        Ammo temp = (Ammo)o;
+        Ammunition temp = (Ammunition)o;
         if (temp.getWeight()>getWeight()){
             return -1;
         }
@@ -66,7 +66,7 @@ public class Ammo implements Comparable{
         }
     }
 
-    public ArmorType getType() {
+    public Type getType() {
         return type;
     }
 
