@@ -13,7 +13,7 @@ public class Controller {
     //model & view
     private Model model;
     private View view;
-    private double priceBottom;
+    private double priceBottom; //it's default bottom price of any ammunition part (0)
 
     /**
      * Constructor initializes model and view
@@ -25,24 +25,26 @@ public class Controller {
         this.view = view;
     }
 
-    void processUser(){
 
+    /**
+     * This method creates a Knight,
+     * equip him,
+     * sorts his ammunition by weight
+     * and find ammunition in certain price range
+     */
+    void processUser(){
+        //create a knight
         model.setKnight(new Knight(View.FAMOUS_KNIGHT));
 
+        //equip a knight
         model.equipKnight(giveAmmo());
 
-//        view.printCollection( model.getKnight().getAmmunition());
+        //sort knight's ammunition by weight
+        model.sortAmmunition(model.getKnight().getAmmunition());
 
-        System.out.println(model.getKnight());
-
-        model.sortAmmunition();
-
-        System.out.println(model.getKnight());
-
-        view.printCollection(model.ammunitionForPrice(
-                inputIntValueWithScanner(new Scanner(System.in)),
-                inputIntValueWithScanner(new Scanner(System.in))));
-
+        //view ammunition in certain price range
+        view.printCollection(model.ammunitionForPrice(inputIntValueWithScanner(new Scanner(System.in)),
+                                                        inputIntValueWithScanner(new Scanner(System.in))));
 
     }
 
@@ -53,7 +55,7 @@ public class Controller {
      */
     private List<Ammunition> giveAmmo(){
 
-        //create map
+        //create armory
         Map<Ammunition.Type, Ammunition> armory = new TreeMap<>();
 
         //create ammunition elements
@@ -67,14 +69,14 @@ public class Controller {
         Ammunition sword = new Ammunition(5.0, 1200, Ammunition.Type.SWORD);
 
         //put it in list
-        putSingleAmmuniiton(armory,helm);
-        putSingleAmmuniiton(armory,shoulders);
-        putSingleAmmuniiton(armory,chest);
-        putSingleAmmuniiton(armory, bracers);
-        putSingleAmmuniiton(armory, gloves);
-        putSingleAmmuniiton(armory, pants);
-        putSingleAmmuniiton(armory, boots);
-        putSingleAmmuniiton(armory, sword);
+        putAmmunition(armory,helm);
+        putAmmunition(armory,shoulders);
+        putAmmunition(armory,chest);
+        putAmmunition(armory, bracers);
+        putAmmunition(armory, gloves);
+        putAmmunition(armory, pants);
+        putAmmunition(armory, boots);
+        putAmmunition(armory, sword);
 
         return  new ArrayList<>(armory.values());
     }
@@ -85,7 +87,7 @@ public class Controller {
      * @param map contains only unique ammunition
      * @param ammunition is putted in map
      */
-    private void putSingleAmmuniiton(Map map, Ammunition ammunition){
+    private void putAmmunition(Map<Ammunition.Type, Ammunition> map, Ammunition ammunition){
         map.put(ammunition.getType(),ammunition);
     }
 

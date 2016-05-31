@@ -8,12 +8,21 @@ import java.util.Set;
  * Created by potaychuk on 30.05.2016.
  */
 public class Knight {
-    private String name;
-    private List<Ammunition> ammunition;
 
+
+    private String name;                    //name
+    private List<Ammunition> ammunition;    //list of knight's ammunition
+
+    /**
+     * Constructor
+     * @param name is name of Knight
+     */
     public Knight(String name) {
         this.name = "sir " + name;
     }
+
+
+
 
     //setter & getter
     public String getName() {

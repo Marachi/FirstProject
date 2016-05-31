@@ -12,13 +12,17 @@ public class Ammunition implements Comparable{
 
 
     public Ammunition(double weight, double price, Type type) {
+
+
         this.weight = weight;
         this.price = price;
         this.type = type;
     }
 
 
-
+    /**
+     * Contains types of ammunition
+     */
     public enum Type {
         HELM,SHOULDERS,CHEST,PANTS,GLOVES,BOOTS,BRACERS, SWORD
     }
@@ -28,9 +32,7 @@ public class Ammunition implements Comparable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Ammunition ammo = (Ammunition) o;
-
         return type == ammo.type;
 
     }
@@ -72,7 +74,7 @@ public class Ammunition implements Comparable{
         return type;
     }
 
-    public double getWeight() {
+    double getWeight() {
         return weight;
     }
 
