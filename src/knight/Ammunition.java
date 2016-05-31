@@ -4,6 +4,8 @@ package knight;
  * Created by potaychuk on 30.05.2016.
  */
 public class Ammunition implements Comparable{
+
+
     private Type type;
     private double weight;
     private double price;

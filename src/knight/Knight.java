@@ -1,6 +1,7 @@
 package knight;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Set;
  */
 public class Knight {
     private String name;
-    private Collection ammunition;
+    private List<Ammunition> ammunition;
 
     public Knight(String name) {
         this.name = "sir " + name;
@@ -23,19 +24,19 @@ public class Knight {
         this.name = name;
     }
 
-    public Collection getAmmunition() {
+    public List<Ammunition> getAmmunition() {
         return ammunition;
     }
 
-    public void setAmmunition(Collection ammunition) {
+    public void setAmmunition(List<Ammunition> ammunition) {
         this.ammunition = ammunition;
     }
 
     @Override
     public String toString() {
-        return "I'm a knight, " +
-                name + '\n' +
-                "My ammunition: " + ammunition +
+        return "Knight " +
+                name +
+                "Has ammunition: " + ammunition +
                 '}';
     }
 }

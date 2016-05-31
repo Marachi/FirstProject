@@ -2,6 +2,8 @@ package mvc;
 
 import knight.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,13 +13,34 @@ public class Model {
 
     private Knight knight;
 
+    void sortAmmunition(){
+        Collections.sort(getKnight().getAmmunition());
+    }
 
-    public Knight getKnight() {
+    List<Ammunition> ammunitionForPrice(double from, double to){
+
+        List<Ammunition> arrayList = new ArrayList<>();
+
+        for (Ammunition ammunition : getKnight().getAmmunition()) {
+            if (ammunition.getPrice() >= from && ammunition.getPrice() <= to) {
+                arrayList.add(ammunition);
+            }
+        }
+        return arrayList;
+    }
+
+    Knight getKnight() {
         return knight;
     }
 
-    public void setKnight(Knight knight) {
+    void setKnight(Knight knight) {
         this.knight = knight;
     }
+
+    void equipKnight(List<Ammunition> ammunitions) {
+        getKnight().setAmmunition(ammunitions);
+    }
+
+
 }
 
