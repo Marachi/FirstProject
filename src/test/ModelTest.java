@@ -24,21 +24,35 @@ public class ModelTest {
     private View view = new View();
     private Controller controller = new Controller(model,view);
 
+
+
+
     /**
      * This method checks the availability of equipment
      */
     @Test
-    public void equipKnightTest(){
+    public void equipKnightTest() throws NoKnightException {
         model.setKnight(new Knight(View.FAMOUS_KNIGHT));//set a Knight
         model.equipKnight(controller.giveAmmo());       // equip him
         Assert.assertTrue(model.getKnight().getAmmunition().equals(controller.giveAmmo()));
     }
 
     /**
+     * This method checks presence of NoKnightException
+     */
+    @Test(expected = NoKnightException.class)
+    public void equipKnightNoKnight() throws NoKnightException {
+        //model.setKnight(new Knight(View.FAMOUS_KNIGHT));//set a Knight
+        model.equipKnight(controller.giveAmmo());       // equip him
+    }
+
+
+
+    /**
      * This method checks valid of sorting
      */
     @Test
-    public void sortAmmunitionTest(){
+    public void sortAmmunitionTest() throws NoKnightException {
         model.setKnight(new Knight(View.FAMOUS_KNIGHT));  //set a Knight
         model.equipKnight(controller.giveAmmo());         // equip him
 
@@ -57,6 +71,19 @@ public class ModelTest {
         Assert.assertTrue(sorted);
 
     }
+
+
+    /**
+     * This method checks presence of NoKnightException
+     */
+    @Test(expected = NoKnightException.class)
+    public void sortAmmunitionNoKnight() throws NoKnightException {
+        //        model.setKnight(new Knight(View.FAMOUS_KNIGHT));  //set a Knight
+        //        model.equipKnight(controller.giveAmmo());         // equip him
+        model.sortAmmunition();                           //sorting
+    }
+
+
 
     /**
      * This method checks price of elements returned by ammunitionForPrice()

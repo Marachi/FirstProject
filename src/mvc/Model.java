@@ -17,19 +17,21 @@ public class Model {
      * This method equips a knight
      * @param ammunition is list of knight ammunition
      */
-    public void equipKnight(List<Ammunition> ammunition) {
+    public void equipKnight(List<Ammunition> ammunition) throws NoKnightException{
         if (knight!=null) {
             getKnight().setAmmunition(ammunition);
         }
+        throw new NoKnightException();
     }
 
     /**
      * It's facade-method for knight's ammunition sorting
      */
-    public void sortAmmunition(){
+    public void sortAmmunition() throws NoKnightException {
         if (knight!=null) {
             Collections.sort(knight.getAmmunition());
         }
+        throw new NoKnightException();
     }
 
 
