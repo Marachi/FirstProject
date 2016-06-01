@@ -32,12 +32,6 @@ class Model {
         }
     }
 
-    /**
-     * This method find elements of ammunition with price in certain range
-     * @param from is bottom price
-     * @param to is top price
-     * @return list of elements with price in range
-     */
 
     /**
      * This method find elements of ammunition with price in certain range
