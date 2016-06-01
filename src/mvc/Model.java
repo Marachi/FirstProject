@@ -1,13 +1,13 @@
 package mvc;
 
 import knight.*;
-import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by potaychuk on 30.05.2016.
+ * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
 class Model {
 
@@ -15,18 +15,21 @@ class Model {
 
     /**
      * This method equips a knight
-     * @param ammunitions is list of knight ammunition
+     * @param ammunition is list of knight ammunition
      */
-    void equipKnight(List<Ammunition> ammunitions) {
-        getKnight().setAmmunition(ammunitions);
+    void equipKnight(List<Ammunition> ammunition) {
+        if (knight!=null) {
+            getKnight().setAmmunition(ammunition);
+        }
     }
 
     /**
-     * It's facade-method for ammunition sorting
-     * @param list is collection which will be sorted
+     * It's facade-method for knight's ammunition sorting
      */
-    void sortAmmunition(List<Ammunition> list){
-        Collections.sort(list);
+    void sortAmmunition(){
+        if (knight!=null) {
+            Collections.sort(knight.getAmmunition());
+        }
     }
 
     /**
@@ -35,10 +38,22 @@ class Model {
      * @param to is top price
      * @return list of elements with price in range
      */
-    List<Ammunition> ammunitionForPrice(double from, double to){
-        return getKnight().getAmmunition().stream().
-                filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
-                .collect(Collectors.toList());
+
+    /**
+     * This method find elements of ammunition with price in certain range
+     * @param from is bottom price
+     * @param to is top price
+     * @return list of elements with price in range
+     * @throws NoKnightException if knight wasn't set
+     */
+    List<Ammunition> ammunitionForPrice(double from, double to) throws NoKnightException{
+        if (knight!=null){
+            return getKnight().getAmmunition().stream().
+                    filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
+                    .collect(Collectors.toList());
+        }
+
+        throw new  NoKnightException("Set knight first!");
     }
 
     //setters & getters

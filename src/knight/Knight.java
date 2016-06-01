@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by potaychuk on 30.05.2016.
+ * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
 public class Knight {
 

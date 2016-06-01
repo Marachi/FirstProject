@@ -3,7 +3,7 @@ package mvc;
 import java.util.Collection;
 
 /**
- * Created by potaychuk on 30.05.2016.
+ * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
  class View {
 

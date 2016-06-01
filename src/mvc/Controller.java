@@ -2,13 +2,14 @@ package mvc;
 
 import knight.Ammunition;
 import knight.Knight;
+import knight.NoKnightException;
 
 import java.util.*;
 
 /**
- * Created by potaychuk on 30.05.2016.
+ * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
-public class Controller {
+class Controller {
 
     //model & view
     private Model model;
@@ -34,17 +35,21 @@ public class Controller {
      */
     void processUser(){
         //create a knight
-        model.setKnight(new Knight(View.FAMOUS_KNIGHT));
+//        model.setKnight(new Knight(View.FAMOUS_KNIGHT));
 
         //equip a knight
         model.equipKnight(giveAmmo());
 
         //sort knight's ammunition by weight
-        model.sortAmmunition(model.getKnight().getAmmunition());
+        model.sortAmmunition();
 
         //view ammunition in certain price range
-        view.printCollection(model.ammunitionForPrice(inputIntValueWithScanner(new Scanner(System.in)),
-                                                        inputIntValueWithScanner(new Scanner(System.in))));
+        try {
+            view.printCollection(model.ammunitionForPrice(inputIntValueWithScanner(new Scanner(System.in)),
+                                                            inputIntValueWithScanner(new Scanner(System.in))));
+        } catch (NoKnightException e) {
+            e.printStackTrace();
+        }
 
     }
 
