@@ -5,10 +5,10 @@ import java.util.Collection;
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
- class View {
+public class View {
 
     //Constants
-    static final String FAMOUS_KNIGHT = "Lancelot";
+    public static final String FAMOUS_KNIGHT = "Lancelot";
     static final String INPUT_DATA = "Please, set a range.";
     static final String INPUT_FROM = "From: ";
     static final String INPUT_TO = "To: ";

@@ -2,6 +2,7 @@ package mvc;
 
 import knight.Ammunition;
 import knight.Knight;
+import knight.NoAmmunitionException;
 import knight.NoKnightException;
 
 import java.util.*;
@@ -9,7 +10,7 @@ import java.util.*;
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
-class Controller {
+public class Controller {
 
     //model & view
     private Model model;
@@ -21,7 +22,7 @@ class Controller {
      * @param model is model
      * @param view is view
      */
-    Controller(Model model, View view) {
+    public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
     }
@@ -47,10 +48,9 @@ class Controller {
         try {
             view.printCollection(model.ammunitionForPrice(inputIntValueWithScanner(new Scanner(System.in)),
                                                             inputIntValueWithScanner(new Scanner(System.in))));
-        } catch (NoKnightException e) {
+        } catch (NoKnightException | NoAmmunitionException e) {
             e.printStackTrace();
         }
-
     }
 
 
@@ -58,7 +58,7 @@ class Controller {
      *This method create ammunition and puts it in list
      * @return list of ammunition
      */
-    private List<Ammunition> giveAmmo(){
+    public  List<Ammunition> giveAmmo(){
 
         //create armory
         Map<Ammunition.Type, Ammunition> armory = new TreeMap<>();

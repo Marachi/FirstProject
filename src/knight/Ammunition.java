@@ -74,7 +74,7 @@ public class Ammunition implements Comparable{
         return type;
     }
 
-    double getWeight() {
+    public double getWeight() {
         return weight;
     }
 

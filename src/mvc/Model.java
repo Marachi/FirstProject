@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
  */
-class Model {
+public class Model {
 
     private Knight knight;   //A knight
 
@@ -17,7 +17,7 @@ class Model {
      * This method equips a knight
      * @param ammunition is list of knight ammunition
      */
-    void equipKnight(List<Ammunition> ammunition) {
+    public void equipKnight(List<Ammunition> ammunition) {
         if (knight!=null) {
             getKnight().setAmmunition(ammunition);
         }
@@ -26,7 +26,7 @@ class Model {
     /**
      * It's facade-method for knight's ammunition sorting
      */
-    void sortAmmunition(){
+    public void sortAmmunition(){
         if (knight!=null) {
             Collections.sort(knight.getAmmunition());
         }
@@ -40,22 +40,27 @@ class Model {
      * @return list of elements with price in range
      * @throws NoKnightException if knight wasn't set
      */
-    List<Ammunition> ammunitionForPrice(double from, double to) throws NoKnightException{
+    public List<Ammunition> ammunitionForPrice(double from, double to) throws NoKnightException,NoAmmunitionException{
         if (knight!=null){
-            return getKnight().getAmmunition().stream().
-                    filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
-                    .collect(Collectors.toList());
+            if (knight.getAmmunition()!=null) {
+                return getKnight().getAmmunition().stream().
+                        filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
+                        .collect(Collectors.toList());
+            }else {
+                throw new NoAmmunitionException("Knight without ammunition!");
+            }
+
         }
 
         throw new  NoKnightException("Set knight first!");
     }
 
     //setters & getters
-    Knight getKnight() {
+    public Knight getKnight() {
         return knight;
     }
 
-    void setKnight(Knight knight) {
+    public void setKnight(Knight knight) {
         this.knight = knight;
     }
 
