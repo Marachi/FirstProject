@@ -39,10 +39,19 @@ public class Controller {
 //        model.setKnight(new Knight(View.FAMOUS_KNIGHT));
 
         //equip a knight
-        model.equipKnight(giveAmmo());
+        try {
+            model.equipKnight(giveAmmo());
+        }catch (NoKnightException e){
+            e.printStackTrace();
+        }
 
         //sort knight's ammunition by weight
-        model.sortAmmunition();
+        try {
+            model.sortAmmunition();
+        } catch (NoKnightException | NoAmmunitionException e) {
+            e.printStackTrace();
+        }
+
 
         //view ammunition in certain price range
         try {

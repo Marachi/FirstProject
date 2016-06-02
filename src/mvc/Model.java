@@ -27,11 +27,15 @@ public class Model {
     /**
      * It's facade-method for knight's ammunition sorting
      */
-    public void sortAmmunition() throws NoKnightException {
+    public void sortAmmunition() throws NoKnightException, NoAmmunitionException {
         if (knight!=null) {
-            Collections.sort(knight.getAmmunition());
+            if (knight.getAmmunition()!=null) {
+                Collections.sort(knight.getAmmunition());
+            }else {
+                throw new NoAmmunitionException("Knight without ammunition!");
+            }
         }
-        throw new NoKnightException();
+        throw new  NoKnightException("Set knight first!");
     }
 
 
@@ -45,6 +49,7 @@ public class Model {
     public List<Ammunition> ammunitionForPrice(double from, double to) throws NoKnightException,NoAmmunitionException{
         if (knight!=null){
             if (knight.getAmmunition()!=null) {
+
                 return getKnight().getAmmunition().stream().
                         filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
                         .collect(Collectors.toList());

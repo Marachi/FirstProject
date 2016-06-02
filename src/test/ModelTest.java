@@ -52,7 +52,7 @@ public class ModelTest {
      * This method checks valid of sorting
      */
     @Test
-    public void sortAmmunitionTest() throws NoKnightException {
+    public void sortAmmunitionTest() throws NoKnightException, NoAmmunitionException {
         model.setKnight(new Knight(View.FAMOUS_KNIGHT));  //set a Knight
         model.equipKnight(controller.giveAmmo());         // equip him
 
@@ -72,18 +72,25 @@ public class ModelTest {
 
     }
 
+    /**
+     * This method checks presence of NoAmmunitionException
+     */
+    @Test(expected = NoAmmunitionException.class)
+    public void sortAmmunitionNoAmmunition() throws NoKnightException, NoAmmunitionException {
+        model.setKnight(new Knight(View.FAMOUS_KNIGHT));  //set a Knight
+        //        model.equipKnight(controller.giveAmmo());         // equip him
+        model.sortAmmunition();                           //sorting
+    }
 
     /**
      * This method checks presence of NoKnightException
      */
     @Test(expected = NoKnightException.class)
-    public void sortAmmunitionNoKnight() throws NoKnightException {
+    public void sortAmmunitionNoKnight() throws NoKnightException, NoAmmunitionException {
         //        model.setKnight(new Knight(View.FAMOUS_KNIGHT));  //set a Knight
         //        model.equipKnight(controller.giveAmmo());         // equip him
         model.sortAmmunition();                           //sorting
     }
-
-
 
     /**
      * This method checks price of elements returned by ammunitionForPrice()
