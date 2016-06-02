@@ -6,14 +6,18 @@ package knight;
 public class Ammunition implements Comparable{
 
 
-    private Type type;
-    private double weight;
-    private double price;
+    private Type type;          //type of ammunition
+    private double weight;      //weight
+    private double price;       //price
 
-
+    /**
+     * Constructor
+     * sets weight, price and type
+     * @param weight is weight
+     * @param price is price
+     * @param type  is type
+     */
     public Ammunition(double weight, double price, Type type) {
-
-
         this.weight = weight;
         this.price = price;
         this.type = type;

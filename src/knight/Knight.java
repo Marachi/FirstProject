@@ -1,8 +1,6 @@
 package knight;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
