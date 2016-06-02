@@ -36,7 +36,7 @@ public class Controller {
      */
     void processUser(){
         //create a knight
-//        model.setKnight(new Knight(View.FAMOUS_KNIGHT));
+        model.setKnight(new Knight(View.FAMOUS_KNIGHT));
 
         //equip a knight
         try {

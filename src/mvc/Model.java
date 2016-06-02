@@ -20,8 +20,9 @@ public class Model {
     public void equipKnight(List<Ammunition> ammunition) throws NoKnightException{
         if (knight!=null) {
             getKnight().setAmmunition(ammunition);
+        }else {
+            throw new NoKnightException();
         }
-        throw new NoKnightException();
     }
 
     /**
@@ -29,13 +30,16 @@ public class Model {
      */
     public void sortAmmunition() throws NoKnightException, NoAmmunitionException {
         if (knight!=null) {
+
             if (knight.getAmmunition()!=null) {
                 Collections.sort(knight.getAmmunition());
             }else {
                 throw new NoAmmunitionException("Knight without ammunition!");
             }
+
+        }else {
+            throw new NoKnightException("Set knight first!");
         }
-        throw new  NoKnightException("Set knight first!");
     }
 
 
