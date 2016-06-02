@@ -75,6 +75,7 @@ public class Ammunition implements Comparable{
         }
     }
 
+    //getters & setters
     public Type getType() {
         return type;
     }

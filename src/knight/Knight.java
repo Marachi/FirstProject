@@ -20,8 +20,13 @@ public class Knight {
         this.name = "sir " + name;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Knight " +
+                name +
+                "Has ammunition: " + ammunition +
+                '}';
+    }
 
     //setter & getter
     public String getName() {
@@ -40,11 +45,4 @@ public class Knight {
         this.ammunition = ammunition;
     }
 
-    @Override
-    public String toString() {
-        return "Knight " +
-                name +
-                "Has ammunition: " + ammunition +
-                '}';
-    }
 }
