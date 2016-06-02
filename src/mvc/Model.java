@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
+ * Model
  */
 public class Model {
 

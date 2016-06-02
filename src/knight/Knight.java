@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
+ * This class describes a knight. The knight has a name and ammunition.
  */
 public class Knight {
 

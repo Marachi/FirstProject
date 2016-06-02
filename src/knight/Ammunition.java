@@ -2,6 +2,7 @@ package knight;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
+ * This class describes ammunition (weight, price and type).
  */
 public class Ammunition implements Comparable{
 

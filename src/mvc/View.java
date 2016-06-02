@@ -4,6 +4,7 @@ import java.util.Collection;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
+ * View
  */
 public class View {
 

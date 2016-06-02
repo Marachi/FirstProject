@@ -9,6 +9,7 @@ import java.util.*;
 
 /**
  * Created by Potaychuk Sviatoslav on 01.06.2016.
+ * Controller
  */
 public class Controller {
 
