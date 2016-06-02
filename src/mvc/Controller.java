@@ -70,7 +70,7 @@ public class Controller {
     public  List<Ammunition> giveAmmo(){
 
         //create armory
-        Map<Ammunition.Type, Ammunition> armory = new TreeMap<>();
+        Map<Ammunition.Type, Ammunition> armory = new HashMap<>();
 
         //create ammunition elements
         Ammunition helm = new Ammunition(3.1, 300, Ammunition.Type.HELM );
