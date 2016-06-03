@@ -39,23 +39,16 @@ public class Controller {
         //create a knight
         model.setKnight(new Knight(View.FAMOUS_KNIGHT));
 
-        //equip a knight
+
         try {
+
+            //equip a knight
             model.equipKnight(giveAmmo());
-        }catch (NoKnightException e){
-            e.printStackTrace();
-        }
 
-        //sort knight's ammunition by weight
-        try {
+            //sort knight's ammunition by weight
             model.sortAmmunition();
-        } catch (NoKnightException | NoAmmunitionException e) {
-            e.printStackTrace();
-        }
 
-
-        //view ammunition in certain price range
-        try {
+            //view ammunition in certain price range
             view.printCollection(model.ammunitionForPrice(inputIntValueWithScanner(new Scanner(System.in)),
                                                             inputIntValueWithScanner(new Scanner(System.in))));
         } catch (NoKnightException | NoAmmunitionException e) {
@@ -65,7 +58,8 @@ public class Controller {
 
 
     /**
-     *This method create ammunition and puts it in list
+     *This factory-method create list of ammunition
+     * Elements of list are unique.
      * @return list of ammunition
      */
     public  List<Ammunition> giveAmmo(){
