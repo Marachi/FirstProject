@@ -16,6 +16,8 @@ public class View {
     static final String WRONG_INPUT_DOUBLE_DATA = "Wrong data input! Please, input a number: ";
     static final String WRONG_TO = "Wrong data input! Please, input a number more than  ";
     static final String NOT_MINUS = "Wrong data input! Please, input a number more than  0";
+    static final String NO_KNIGHT_MSG = "Set a knight!";
+    static final String NO_AMMUNITION_MSG = "Set an ammunition!";
 
     //print methods
     void printMsg(String s){

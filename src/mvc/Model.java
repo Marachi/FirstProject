@@ -35,11 +35,11 @@ public class Model {
             if (knight.getAmmunition()!=null) {
                 Collections.sort(knight.getAmmunition());
             }else {
-                throw new NoAmmunitionException("Knight without ammunition!");
+                throw new NoAmmunitionException(View.NO_AMMUNITION_MSG);
             }
 
         }else {
-            throw new NoKnightException("Set knight first!");
+            throw new NoKnightException(View.NO_KNIGHT_MSG);
         }
     }
 
@@ -59,12 +59,12 @@ public class Model {
                         filter(ammunition -> ammunition.getPrice() >= from && ammunition.getPrice() <= to)
                         .collect(Collectors.toList());
             }else {
-                throw new NoAmmunitionException("Knight without ammunition!");
+                throw new NoAmmunitionException(View.NO_AMMUNITION_MSG);
             }
 
         }
 
-        throw new  NoKnightException("Set knight first!");
+        throw new  NoKnightException(View.NO_KNIGHT_MSG);
     }
 
     //setters & getters
