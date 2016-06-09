@@ -37,8 +37,10 @@ public class Ammunition implements Comparable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Ammunition ammo = (Ammunition) o;
-        return type == ammo.type;
+
+        Ammunition that = (Ammunition) o;
+
+        return Double.compare(that.weight, weight) == 0 && Double.compare(that.price, price) == 0 && type == that.type;
 
     }
 
@@ -67,8 +69,7 @@ public class Ammunition implements Comparable{
         Ammunition temp = (Ammunition)o;
         if (temp.getWeight()>getWeight()){
             return -1;
-        }
-        else if (temp.getWeight()<getWeight()){
+        }else if (temp.getWeight()<getWeight()){
             return 1;
         }else {
             return 0;
