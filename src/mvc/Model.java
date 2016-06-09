@@ -12,7 +12,10 @@ import java.util.stream.Collectors;
  */
 public class Model {
 
-    private Knight knight;   //A knight
+    /**
+     * A knight
+     */
+    private Knight knight;
 
     /**
      * This method equips a knight

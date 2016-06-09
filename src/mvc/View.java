@@ -8,7 +8,9 @@ import java.util.Collection;
  */
 public class View {
 
-    //Constants
+    /**
+     * String constants
+     */
     public static final String FAMOUS_KNIGHT = "Lancelot";
     static final String INPUT_DATA = "Please, set a range.";
     static final String INPUT_FROM = "From: ";

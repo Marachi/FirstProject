@@ -13,10 +13,20 @@ import java.util.*;
  */
 public class Controller {
 
-    //model & view
+    /**
+     * Model
+     */
     private Model model;
+
+    /**
+     * View
+     */
     private View view;
-    private double priceBottom; //it's default bottom price of any ammunition part (0)
+
+    /**
+     * Necessary variable. It's default bottom price of any ammunition element
+     */
+    private double priceBottom;
 
     /**
      * Constructor initializes model and view

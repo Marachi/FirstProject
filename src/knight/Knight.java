@@ -8,9 +8,15 @@ import java.util.List;
  */
 public class Knight {
 
+    /**
+     * Name
+     */
+    private String name;
 
-    private String name;                    //name
-    private List<Ammunition> ammunition;    //list of knight's ammunition
+    /**
+     * Ammunition
+     */
+    private List<Ammunition> ammunition;
 
     /**
      * Constructor

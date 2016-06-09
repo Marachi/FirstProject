@@ -6,10 +6,20 @@ package knight;
  */
 public class Ammunition implements Comparable{
 
+    /**
+     * type of ammunition
+     */
+    private Type type;
 
-    private Type type;          //type of ammunition
-    private double weight;      //weight
-    private double price;       //price
+    /**
+     *weight
+     */
+    private double weight;
+
+    /**
+     *price
+     */
+    private double price;
 
     /**
      * Constructor
